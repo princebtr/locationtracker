@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Location Sharing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+
+        img {
+            margin: 35px;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .showDetails,
+        .fullAddress{
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .geo-btn{
+            width: 100%;
+            background-color: #09d6e8;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .geo-btn:hover {
+            background-color: #4CAF50;
+        }
+
+        .instructions{
+            font-size: 15px;
+            color: #093336;
+            font-weight: bold;
+            width: calc(100% - 20px);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <img src="logo.png" alt="Logo">
+        <button class="geo-btn">Show User Location</button>
+        <p class="showDetails">User Location Details</p>
+        <p class="fullAddress">User Address</p>
+        <script src="script.js"></script>
+</div>
+        <p class="instructions">Click "Show User Location" button.<br>
+        Allow location access if prompted.<br>
+        View your location details.</p>
+</body>
+</html>
