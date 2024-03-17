@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const User = require('../models/usersModel');
+const Location = require('../models/locationsModel');
 
 const router = express.Router();
 
@@ -37,6 +38,18 @@ router.post('/login', async (req, res) => {
         res.send("Login successful");
     } catch (err) {
         res.status(400).send("Error logging in");
+    }
+});
+
+router.post('/user/locations', async (req, res) => {
+    try {
+        const locations = await Location.find({ userId: req.body.userId })
+        if (locations.length < 1) {
+            res.send('No previous location history for user')
+        }
+        res.send(locations)
+    } catch (error) {
+        res.status(404).json({ error: error.message })
     }
 });
 
