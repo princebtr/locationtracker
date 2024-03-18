@@ -35,13 +35,23 @@ router.post('/login', async (req, res) => {
         if (!passwordMatch) {
             return res.status(401).send("Incorrect password");
         }
-        res.send("Login successful");
+        res.send(user);
     } catch (err) {
         res.status(400).send("Error logging in");
     }
 });
 
-router.post('/user/locations', async (req, res) => {
+router.post('/user/add_location', async (req, res) => {
+    try {
+        const location = new Location(req.body);
+        await location.save()
+        res.send("Location saved to history");
+    } catch (error) {
+        res.status(404).send({ error: error.message })
+    }
+})
+
+router.get('/user/locations', async (req, res) => {
     try {
         const locations = await Location.find({ userId: req.body.userId })
         if (locations.length < 1) {
