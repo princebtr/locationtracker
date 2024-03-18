@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv")
 
-const dbUrl = "mongodb+srv://adesinamubarak123:SyIZlL1FzLZSiKhZ@locationtracker.ubqmhvy.mongodb.net/";
+dotenv.config();
+
+const dbUrl = process.env.DBURL
 
 const database = mongoose.connect(dbUrl)
     .then(() => {
