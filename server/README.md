@@ -80,4 +80,4 @@ To start the server, run `node app.js` in the terminal.
 - bcryptjs
 
 ## Contributors
-- Your Name @Mubarak1A
+- Your Name (@Mubarak1A)
