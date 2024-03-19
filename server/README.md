@@ -10,6 +10,11 @@ This is the backend API for the Location Tracker project. It provides endpoints 
 ## Running the Server
 To start the server, run `node app.js` in the terminal.
 
+# Deployment
+The server has been deployed on Render and can be accessed at https://locationtracker-server.onrender.com.
+
+`Deployment made from the fork https://github.com/Mubarak1A/locationtracker not from this original repository.`
+
 ## API Endpoints
 
 ### 1. Register User
