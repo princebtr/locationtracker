@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track me homepage</title>
+    <title>Login or Register</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,57 +11,159 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 50vh;
             flex-direction: column;
         }
-        .container {
-            text-align: center;
-            margin-top: 20px;
+        .wrap {
+            width: 350px;
+            margin: 50px auto;
+            background: #fafafa;
         }
+        .login-form{
+            width: 450px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            background: #ffffff;
+        }
+        .form-input{
+            background: #fafafa;
+            border: 1px solid #eeeeee;
+            padding: 12px;
+            width: 100%;
+        }
+        .form-group{
+            margin-bottom: 1rem;
+        }
+        .form-button{
+            background: #2c91d8;
+            border: 1px solid #ddd;
+            color: #ffffff;
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            width: 100%;
+            text-transform: uppercase;
+        }
+        .form-button:hover{
+            background: #1dea72;
+        }
+        .form-header{
+            text-align: center;
+            margin-bottom : 2rem;
+        }
+        .form-footer{
+            text-align: center;
+        }
+        .flipcard{
+            background-color: transparent;
+            width : 350px;
+            perspective: 1000px;
+        }
+        .flipcard-inner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flipcard-front, .flipcard-back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .flipcard-front{
+            color: black;
+        }
+        .flipcard-back{
+            background-color: dodgerblue;
+            transform: rotateY(180deg);
+        }
+        input[type="checkbox"]:checked + .flipcard .flipcard-inner{
+            transform: rotateY(180deg);
+        }
+        .form-button-register{
+            background: #2c91d8;
+        }
+        .form-button-register:hover{
+            background: #1dea72;
+        }
+        .switch_form:before{
+            content: " ";
+            display: block;
+            background:red;
+        }
+        .label-highlight{
+            color: blue;
+        }
+
         img {
             margin: 35px;
             max-width: 300px;
             height: auto;
             border-radius: 8px;
         }
-        form {
-            /*margin-top: 40px;*/
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 450px;
-        }
-        input[type="text"],
-        input[type="email"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            width: 100%;
-            background-color: #09d6e8;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #4CAF50;
-        }
     </style>
 </head>
 <body>
-<div class="container">
-    <form action="trackme.html" method="post">
-        <img src="logo.png" alt="Logo">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <input type="submit" value="Track Me">
-    </form>
+<div class="wrap">
+    <input type="checkbox" id="form_switch" style="display: none;">
+    <div class="flipcard">
+        <div class="flipcard-inner">
+            <div class="flipcard-front">
+                <form class="login-form" action="trackme.html">
+                    <div class="form-header">
+                        <img src="logo.png" alt="Logo">
+                        <p>Login to access your dashboard</p>
+                    </div>
+                    <!--Email Input-->
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <!--Password Input-->
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="password" placeholder="password" required>
+                    </div>
+                    <!--Login Button-->
+                    <div class="form-group">
+                        <button class="form-button" type="submit">Login</button>
+                    </div>
+                    <div class="form-footer">
+                        Don't have an account? <label class="label-highlight" for="form_switch"> Sign Up </label>
+                    </div>
+                </form>
+            </div>
+            <div class="flipcard-back">
+                <form class="login-form" action="">
+                    <div class="form-header">
+                        <img src="logo.png" alt="Logo">
+                        <p>Register for a new account</p>
+                    </div>
+                    <!--Email Input-->
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <!--Name-->
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="name" placeholder="name" required>
+                    </div>
+                    <!--Password Input-->
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="password" placeholder="password" required>
+                    </div>
+                    <!--Sigh up Button-->
+                    <div class="form-group">
+                        <button class="form-button form-button-register" type="submit">Signup</button>
+                    </div>
+                    <div class="form-footer">
+                        Already have an account? <label class="label-highlight" for="form_switch"> Login</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
