@@ -31,3 +31,13 @@ document.querySelector(".geo-btn").addEventListener("click", () => {
         );
     }
 });
+
+const signupBtn = document.getElementById("signup");
+signupBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = document.getElementById('signup-email')
+    const name = document.getElementById('signup-name')
+    const password = document.getElementById('signup-password')
+
+    console.log(`${email.value} ${name.value} ${password.value}`)
+});
