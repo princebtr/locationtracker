@@ -55,11 +55,24 @@
 
         .instructions{
             font-size: 15px;
-            color: #093336;
+            color: #12ddef;
             font-weight: bold;
             width: calc(100% - 20px);
             padding: 10px;
             text-align: center;
+        }
+        .github-link {
+            position: absolute;
+            bottom: 10px;
+            left: 52%;
+            transform: translateX(-50%);
+            color: rgb(223, 223, 238);
+            backdrop-filter: blur(5px);
+            padding: 0.1rem;
+        }
+
+        .github-link:hover {
+            color: rgb(85, 236, 8);
         }
     </style>
 </head>
@@ -74,5 +87,9 @@
         <p class="instructions">Click "Show User Location" button.<br>
         Allow location access if prompted.<br>
         View your location details.</p>
+<div class="github-link">
+    <p>&#x1F44B; You can visit my other projects on <a href="https://github.com/princebtr">  GitHub &#x1F448;
+    </a>.</p>
+</div>
 </body>
 </html>
